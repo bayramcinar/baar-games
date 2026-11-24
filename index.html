@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf4">
+  <meta name="description" content="Baar Games is an independent mobile game studio. Explore 2048: Merge UP, Potion Puff: Color Sort, and Smashkin for iOS and Android." data-tr-content="Baar Games bağımsız bir mobil oyun stüdyosudur. iOS ve Android için 2048: Merge UP, Potion Puff: Color Sort ve Smashkin’i keşfet.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Baar Games | Independent Mobile Game Studio" data-tr-content="Baar Games | Bağımsız Mobil Oyun Stüdyosu">
+  <meta property="og:description" content="Three different ways to puzzle. Discover the mobile games made by Baar Games." data-tr-content="Baar Games’in üç farklı mobil bulmaca oyununu keşfet.">
+  <title data-tr="Baar Games | Bağımsız Mobil Oyun Stüdyosu">Baar Games | Independent Mobile Game Studio</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/Fredoka.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main" data-tr="İçeriğe geç">Skip to content</a>
+
+  <!-- Social brand marks from Simple Icons (CC0). -->
+  <svg width="0" height="0" class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-youtube" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <rect x="2.4" y="2.4" width="19.2" height="19.2" rx="5.2" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="17.7" cy="6.4" r="1.3" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-7.4L5.5 22H2.3l7.3-8.4L1.9 2h6.5l4.4 6.7L18.9 2Zm-1.1 18h1.7L7.5 3.9H5.6L17.8 20Z"/>
+    </symbol>
+    <symbol id="icon-tiktok" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12.53.02h3.93c.17 2.19 1.64 4.03 3.67 4.57.6.16 1.19.21 1.87.21v3.98c-2.04.07-3.93-.56-5.54-1.77v7.94c.04 1.45-.33 2.94-1.07 4.17-1.18 1.99-3.37 3.38-5.69 3.53-1.42.11-2.88-.21-4.11-.94-2.03-1.18-3.42-3.29-3.56-5.62-.05-.46-.04-.94.01-1.39.16-1.88 1.13-3.68 2.59-4.89 1.67-1.41 3.99-2.02 6.12-1.61v4.13c-.99-.33-2.15-.23-3.02.39a3.4 3.4 0 0 0-1.29 1.64 3.2 3.2 0 0 0-.15 1.49c.19 1.62 1.72 2.97 3.37 2.82a3.2 3.2 0 0 0 2.76-1.6c.25-.44.3-.94.34-1.43.11-2.4.07-4.81.08-7.21V.02Z"/>
+    </symbol>
+    <symbol id="icon-email" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="m4 7 7.4 5.6a1 1 0 0 0 1.2 0L20 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Baar Games home" data-tr-aria-label="Baar Games ana sayfa">
+        <img src="assets/baar-mark.webp" width="35" height="45" alt="">
+        <span>BAAR<small>GAMES</small></span>
+      </a>
+      <nav aria-label="Main navigation" data-tr-aria-label="Ana menü">
+        <a href="#games" data-tr="Oyunlar">Games</a>
+        <a href="#studio" data-tr="Stüdyo">Studio</a>
+        <a href="#contact" data-tr="İletişim">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="Site language" data-tr-aria-label="Site dili" hidden>
+          <button type="button" lang="en" data-language="en" aria-label="English" aria-pressed="true">EN</button>
+          <button type="button" lang="tr" data-language="tr" aria-label="Türkçe" aria-pressed="false">TR</button>
+        </div>
+        <a class="button button-outline header-cta" href="#games" data-tr="Oyununu seç">Find your game</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="studio-mark" aria-hidden="true"></span><span data-tr="Bağımsız mobil oyun stüdyosu">Independent mobile game studio</span></p>
+          <h1 id="hero-title"><span class="hero-title-first" data-tr="Küçük oyunlar.">Small games.</span><br><span data-tr="Büyük eğlence.">Big fun.</span></h1>
+          <p class="hero-description" data-tr="Topları birleştir, sihirli iksirleri karıştır veya kusursuz atışı yap. Yeni favori bulmacanı keşfet.">Drop and merge, mix a little magic, or line up the perfect shot. Find your next favorite puzzle.</p>
+          <a class="button button-primary" href="#games" data-tr="Oyunları keşfet">Explore our games</a>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-outer"></div>
+          <span class="star star-mint">✦</span>
+          <span class="star star-peach">✦</span>
+          <span class="star star-lilac">✧</span>
+          <div class="hero-screen hero-screen-merge">
+            <img src="assets/screenshots/merge-ios-1.webp" width="600" height="1301" alt="" fetchpriority="high">
+          </div>
+          <div class="hero-screen hero-screen-smash">
+            <img src="assets/screenshots/smash-ios-1.webp" width="600" height="1301" alt="" fetchpriority="high">
+          </div>
+          <div class="hero-screen hero-screen-potion">
+            <img src="assets/screenshots/potion-android-5.webp" width="273" height="592" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="games-section shell" id="games" aria-labelledby="games-title">
+      <div class="section-header">
+        <div>
+          <h2 id="games-title" data-tr="Oyunlarımız">Our games</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filter games by platform" data-tr-aria-label="Oyunları platforma göre filtrele" hidden>
+          <button type="button" data-platform="all" aria-pressed="true" aria-controls="game-list" data-tr="Tüm oyunlar">All games</button>
+          <button type="button" data-platform="android" aria-pressed="false" aria-controls="game-list">Android</button>
+          <button type="button" data-platform="ios" aria-pressed="false" aria-controls="game-list">iOS</button>
+        </div>
+      </div>
+      <p class="visually-hidden" role="status" id="filter-status"></p>
+
+      <div class="game-grid" id="game-list">
+        <article class="game-card merge-card" aria-labelledby="merge-title" data-platforms="android ios">
+          <a class="game-art" href="assets/screenshots/merge-ios-1.webp" aria-label="View 5 screenshots for 2048: Merge UP" data-tr-aria-label="2048: Merge UP için 5 ekran görüntüsünü aç">
+            <div class="game-screens">
+              <img src="assets/screenshots/merge-ios-1.webp" width="600" height="1301" alt="" loading="lazy" decoding="async">
+              <img src="assets/screenshots/merge-ios-4.webp" width="600" height="1301" alt="" loading="lazy" decoding="async">
+              <img src="assets/screenshots/merge-ios-5.webp" width="600" height="1301" alt="" loading="lazy" decoding="async">
+            </div>
+            <span class="gallery-label"><span class="expand-icon" aria-hidden="true"></span><span data-tr="5 ekran görüntüsü">5 screenshots</span></span>
+          </a>
+          <template class="store-screens">
+            <img src="assets/screenshots/merge-ios-1.webp" width="600" height="1301" alt="2048: Merge UP: Title screen with colorful numbered balls" data-alt-tr="2048: Merge UP: Renkli numaralı topların yer aldığı açılış ekranı" data-store="App Store">
+            <img src="assets/screenshots/merge-ios-2.webp" width="600" height="1301" alt="2048: Merge UP: Shop with ball, launcher, and jar themes" data-alt-tr="2048: Merge UP: Top, atıcı ve kavanoz temalarının yer aldığı mağaza" data-store="App Store">
+            <img src="assets/screenshots/merge-ios-3.webp" width="600" height="1301" alt="2048: Merge UP: Level map with a winding path" data-alt-tr="2048: Merge UP: Kıvrımlı bir yol boyunca sıralanan bölümler" data-store="App Store">
+            <img src="assets/screenshots/merge-ios-4.webp" width="600" height="1301" alt="2048: Merge UP: A level with a cannon aimed at hanging number balls" data-alt-tr="2048: Merge UP: Atıcının asılı numaralı toplara nişan aldığı bölüm" data-store="App Store">
+            <img src="assets/screenshots/merge-ios-5.webp" width="600" height="1301" alt="2048: Merge UP: Endless mode with a high score and number balls" data-alt-tr="2048: Merge UP: Sonsuz Mod ekranında numaralı toplar ve en yüksek skor" data-store="App Store">
+          </template>
+          <div class="game-content">
+            <img class="game-icon" src="assets/merge-up.webp" width="52" height="52" alt="" loading="lazy" decoding="async">
+            <p class="game-genre" data-tr="Sayı birleştirme">Number merge</p>
+            <h3 id="merge-title">2048: Merge UP</h3>
+            <p class="game-description" data-tr="Numaralı topları fırlat ve aynı sayıları birleştir. Bölümleri tamamla veya Sonsuz Mod’da rekorunu kır.">Launch numbered balls and match them to make bigger merges. Clear levels or chase your best score in Endless Mode.</p>
+            <div class="store-links">
+              <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bayramcinar.mergeup2048" target="_blank" rel="noopener noreferrer" aria-label="2048: Merge UP on Google Play" data-tr-aria-label="Google Play’de 2048: Merge UP">
+                <span class="store-icon google-play-icon" aria-hidden="true"></span>Google Play
+              </a>
+              <a class="store-link" href="https://apps.apple.com/us/app/2048-merge-up/id6827235330" target="_blank" rel="noopener noreferrer" aria-label="2048: Merge UP on the App Store" data-tr-aria-label="App Store’da 2048: Merge UP">
+                <span class="store-icon app-store-icon" aria-hidden="true"></span>App Store
+              </a>
+            </div>
+            <div class="socials" aria-label="2048: Merge UP social media" data-tr-aria-label="2048: Merge UP sosyal medya hesapları">
+              <p class="social-title" data-tr="Sosyal medya">Socials</p>
+              <div class="social-links">
+                <span class="social-link social-youtube" data-social-url="" title="Link pending" data-tr-title="Bağlantı yakında">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-youtube"/></svg><span>YouTube</span>
+                </span>
+                <span class="social-link social-instagram" data-social-url="" title="Link pending" data-tr-title="Bağlantı yakında">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-instagram"/></svg><span>Instagram</span>
+                </span>
+                <span class="social-link social-x" data-social-url="" title="Link pending" data-tr-title="Bağlantı yakında">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-x"/></svg><span class="visually-hidden">X</span>
+                </span>
+                <span class="social-link social-tiktok" data-social-url="" title="Link pending" data-tr-title="Bağlantı yakında">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-tiktok"/></svg><span>TikTok</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="game-card potion-card" aria-labelledby="potion-title" data-platforms="android">
+          <a class="game-art" href="assets/screenshots/potion-android-1.webp" aria-label="View 6 screenshots for Potion Puff" data-tr-aria-label="Potion Puff için 6 ekran görüntüsünü aç">
+            <div class="game-screens">
+              <img src="assets/screenshots/potion-android-1.webp" width="273" height="592" alt="" loading="lazy" decoding="async">
+              <img src="assets/screenshots/potion-android-5.webp" width="273" height="592" alt="" loading="lazy" decoding="async">
+              <img src="assets/screenshots/potion-android-6.webp" width="273" height="592" alt="" loading="lazy" decoding="async">
+            </div>
+            <span class="gallery-label"><span class="expand-icon" aria-hidden="true"></span><span data-tr="6 ekran görüntüsü">6 screenshots</span></span>
+          </a>
+          <template class="store-screens">
+            <img src="assets/screenshots/potion-android-1.webp" width="273" height="592" alt="Potion Puff: Title screen in a moonlit alchemy lab" data-alt-tr="Potion Puff: Ay ışığındaki simya laboratuvarında açılış ekranı" data-store="Google Play">
+            <img src="assets/screenshots/potion-android-2.webp" width="273" height="592" alt="Potion Puff: Main menu in the potion workshop" data-alt-tr="Potion Puff: İksir atölyesindeki ana menü" data-store="Google Play">
+            <img src="assets/screenshots/potion-android-3.webp" width="273" height="592" alt="Potion Puff: Alchemy shop with power-ups and boosts" data-alt-tr="Potion Puff: Joker ve güçlendirmelerin yer aldığı simya mağazası" data-store="Google Play">
+            <img src="assets/screenshots/potion-android-4.webp" width="274" height="592" alt="Potion Puff: Level map in the alchemy garden" data-alt-tr="Potion Puff: Simya bahçesindeki bölüm haritası" data-store="Google Play">
+            <img src="assets/screenshots/potion-android-5.webp" width="273" height="592" alt="Potion Puff: A level with bottles of colorful potions to sort" data-alt-tr="Potion Puff: Renkli iksirlerle dolu şişelerin sıralandığı bölüm" data-store="Google Play">
+            <img src="assets/screenshots/potion-android-6.webp" width="273" height="592" alt="Potion Puff: Timed challenge with colorful potions and a countdown" data-alt-tr="Potion Puff: Renkli iksirler ve geri sayacın yer aldığı süreli mücadele" data-store="Google Play">
+          </template>
+          <div class="game-content">
+            <img class="game-icon" src="assets/potion-puff.webp" width="52" height="52" alt="" loading="lazy" decoding="async">
+            <p class="game-genre" data-tr="Renk sıralama">Color sort</p>
+            <h3 id="potion-title">Potion Puff</h3>
+            <p class="game-description" data-tr="Her şişede tek renk kalana kadar iksirleri şişeler arasında aktar. Simya laboratuvarında kendi hızında oyna veya zamana karşı yarış.">Pour colorful potions between bottles until each holds a single color. Take your time in a cozy alchemy lab or race the clock.</p>
+            <div class="store-links">
+              <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bayramcinar.potionpuff" target="_blank" rel="noopener noreferrer" aria-label="Potion Puff: Color Sort on Google Play" data-tr-aria-label="Google Play’de Potion Puff: Color Sort">
+                <span class="store-icon google-play-icon" aria-hidden="true"></span>Google Play
+              </a>
+            </div>
+            <div class="socials" aria-label="Potion Puff social media" data-tr-aria-label="Potion Puff sosyal medya hesapları">
+              <p class="social-title" data-tr="Sosyal medya">Socials</p>
+              <div class="social-links">
+                <a class="social-link social-youtube" href="https://youtube.com/@potionpuff" target="_blank" rel="noopener noreferrer" aria-label="Potion Puff on YouTube" data-tr-aria-label="YouTube | Potion Puff">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-youtube"/></svg><span>YouTube</span>
+                </a>
+                <a class="social-link social-instagram" href="https://www.instagram.com/potionpuff?knvt=cGZrZ2kzbzNnNWVy" target="_blank" rel="noopener noreferrer" aria-label="Potion Puff on Instagram" data-tr-aria-label="Instagram | Potion Puff">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-instagram"/></svg><span>Instagram</span>
+                </a>
+                <a class="social-link social-x" href="https://x.com/potionpuff?s=11" target="_blank" rel="noopener noreferrer" aria-label="Potion Puff on X" data-tr-aria-label="X | Potion Puff">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-x"/></svg><span class="visually-hidden">X</span>
+                </a>
+                <a class="social-link social-tiktok" href="https://www.tiktok.com/@potion.puff.iksir?_r=1&amp;_t=ZS-9Bfb0vaCP6S" target="_blank" rel="noopener noreferrer" aria-label="Potion Puff on TikTok" data-tr-aria-label="TikTok | Potion Puff">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-tiktok"/></svg><span>TikTok</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="game-card smash-card" aria-labelledby="smash-title" data-platforms="ios">
+          <a class="game-art" href="assets/screenshots/smash-ios-1.webp" aria-label="View 5 screenshots for Smashkin" data-tr-aria-label="Smashkin için 5 ekran görüntüsünü aç">
+            <div class="game-screens">
+              <img src="assets/screenshots/smash-ios-1.webp" width="600" height="1301" alt="" loading="lazy" decoding="async">
+              <img src="assets/screenshots/smash-ios-4.webp" width="600" height="1301" alt="" loading="lazy" decoding="async">
+              <img src="assets/screenshots/smash-ios-5.webp" width="600" height="1301" alt="" loading="lazy" decoding="async">
+            </div>
+            <span class="gallery-label"><span class="expand-icon" aria-hidden="true"></span><span data-tr="5 ekran görüntüsü">5 screenshots</span></span>
+          </a>
+          <template class="store-screens">
+            <img src="assets/screenshots/smash-ios-1.webp" width="600" height="1301" alt="Smashkin: Title artwork with the wooden crate mascot" data-alt-tr="Smashkin: Ahşap kasa maskotunun yer aldığı açılış görseli" data-store="App Store">
+            <img src="assets/screenshots/smash-ios-2.webp" width="600" height="1301" alt="Smashkin: Workshop main menu with play and mode options" data-alt-tr="Smashkin: Oynama ve mod seçeneklerinin yer aldığı atölye menüsü" data-store="App Store">
+            <img src="assets/screenshots/smash-ios-3.webp" width="600" height="1301" alt="Smashkin: Workshop level selection screen" data-alt-tr="Smashkin: Atölye bölüm seçimi ekranı" data-store="App Store">
+            <img src="assets/screenshots/smash-ios-4.webp" width="600" height="1301" alt="Smashkin: A level with arrows, crates, and ice on the puzzle grid" data-alt-tr="Smashkin: Ok, kasa ve buz engellerinin yer aldığı bölüm" data-store="App Store">
+            <img src="assets/screenshots/smash-ios-5.webp" width="600" height="1301" alt="Smashkin: Endless mode with a board of arrows and wooden crates" data-alt-tr="Smashkin: Ok ve ahşap kasalarla dolu Sonsuz Mod tahtası" data-store="App Store">
+          </template>
+          <div class="game-content">
+            <img class="game-icon" src="assets/smashkin.webp" width="52" height="52" alt="" loading="lazy" decoding="async">
+            <p class="game-genre" data-tr="Ok bulmacası">Arrow puzzle</p>
+            <h3 id="smash-title">Smashkin</h3>
+            <p class="game-description" data-tr="Atışlarını planla, okları aynalardan sektir ve kasaları parçala. Her bulmacada doğru atış açısını bul.">Plan your shots, bounce arrows off mirrors, and smash through crates in grid puzzles that reward a clever aim.</p>
+            <div class="store-links">
+              <a class="store-link" href="https://apps.apple.com/us/app/smashkin/id6830534141" target="_blank" rel="noopener noreferrer" aria-label="Smashkin on the App Store" data-tr-aria-label="App Store’da Smashkin">
+                <span class="store-icon app-store-icon" aria-hidden="true"></span>App Store
+              </a>
+            </div>
+            <div class="socials" aria-label="Smashkin social media" data-tr-aria-label="Smashkin sosyal medya hesapları">
+              <p class="social-title" data-tr="Sosyal medya">Socials</p>
+              <div class="social-links">
+                <span class="social-link social-youtube" data-social-url="" title="Link pending" data-tr-title="Bağlantı yakında">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-youtube"/></svg><span>YouTube</span>
+                </span>
+                <span class="social-link social-instagram" data-social-url="" title="Link pending" data-tr-title="Bağlantı yakında">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-instagram"/></svg><span>Instagram</span>
+                </span>
+                <span class="social-link social-x" data-social-url="" title="Link pending" data-tr-title="Bağlantı yakında">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-x"/></svg><span class="visually-hidden">X</span>
+                </span>
+                <span class="social-link social-tiktok" data-social-url="" title="Link pending" data-tr-title="Bağlantı yakında">
+                  <svg class="social-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#icon-tiktok"/></svg><span>TikTok</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="studio-section shell" id="studio" aria-labelledby="studio-title">
+      <div class="studio-panel">
+        <div class="studio-art" aria-hidden="true">
+          <img src="assets/baar-mark.webp" width="338" height="430" alt="" loading="lazy" decoding="async">
+        </div>
+        <div class="studio-copy">
+          <h2 id="studio-title" data-tr="Baar Games Hakkında">Behind Baar Games</h2>
+          <p data-tr="Boş bir dakikanda bile oynayabileceğin mobil bulmacalar tasarlayan bağımsız bir stüdyoyuz. Oyunlarımız basit bir hamleyle başlar ve her seferinde daha iyi bir hamle bulmana alan açar.">We’re an independent studio making mobile puzzles you can pick up in a spare minute. Our games start with a simple move and give you room to find a better one.</p>
+          <a class="button button-outline" href="#games" data-show-all data-tr="Tüm oyunlara göz at">Browse all games</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section shell" id="contact" aria-labelledby="contact-title">
+      <div class="contact-panel">
+        <div class="contact-intro">
+          <h2 id="contact-title" data-tr="İletişim">Contact</h2>
+          <p data-tr="Soruların, geri bildirimlerin veya iş birliği tekliflerin için bize yazabilirsin.">Questions, feedback, or business inquiries? Get in touch.</p>
+        </div>
+        <address class="contact-details">
+          <span class="contact-mark" aria-hidden="true">
+            <svg width="26" height="26" focusable="false"><use href="#icon-email"/></svg>
+          </span>
+          <div>
+            <p class="contact-name">Bayram Çınar</p>
+            <a href="mailto:bayram200212@gmail.com">bayram200212@gmail.com</a>
+          </div>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="gallery" aria-labelledby="gallery-title">
+    <div class="gallery-header">
+      <h2 id="gallery-title"></h2>
+      <form method="dialog">
+        <button class="gallery-control gallery-close" type="submit" aria-label="Close screenshots" data-tr-aria-label="Ekran görüntülerini kapat" autofocus>×</button>
+      </form>
+    </div>
+    <div class="gallery-image"></div>
+    <div class="gallery-thumbnails" role="group" aria-label="Choose a screenshot" data-tr-aria-label="Bir ekran görüntüsü seç"></div>
+    <div class="gallery-footer">
+      <button type="button" class="gallery-control" data-direction="-1" data-tr="Önceki">Previous</button>
+      <p class="gallery-position" aria-live="polite"></p>
+      <button type="button" class="gallery-control" data-direction="1" data-tr="Sonraki">Next</button>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <a class="brand" href="#top" aria-label="Baar Games home" data-tr-aria-label="Baar Games ana sayfa">
+        <img src="assets/baar-mark.webp" width="35" height="45" alt="">
+        <span>BAAR<small>GAMES</small></span>
+      </a>
+      <nav aria-label="Footer navigation" data-tr-aria-label="Alt menü">
+        <a href="#games" data-tr="Oyunlar">Games</a>
+        <a href="#studio" data-tr="Stüdyo">Studio</a>
+        <a href="#contact" data-tr="İletişim">Contact</a>
+      </nav>
+      <p class="footer-copyright">© Baar Games</p>
+    </div>
+  </footer>
+</body>
+</html>
