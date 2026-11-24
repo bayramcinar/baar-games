@@ -1,38 +1,41 @@
-const filters = document.querySelector(".filters");
-const buttons = filters.querySelectorAll("button");
-const games = document.querySelectorAll(".game-card");
-const status = document.querySelector("#filter-status");
 const isTurkish = document.documentElement.lang === "tr";
-let visibleGameCount = games.length;
+const filters = document.querySelector(".filters");
 
-function announceGameCount() {
-  status.textContent = isTurkish
-    ? `${visibleGameCount} oyun gösteriliyor.`
-    : `${visibleGameCount} ${visibleGameCount === 1 ? "game" : "games"} shown.`;
-}
+if (filters) {
+  const buttons = filters.querySelectorAll("button");
+  const games = document.querySelectorAll(".game-card");
+  const status = document.querySelector("#filter-status");
+  let visibleGameCount = games.length;
 
-function showGames(platform) {
-  visibleGameCount = 0;
+  function announceGameCount() {
+    status.textContent = isTurkish
+      ? `${visibleGameCount} oyun gösteriliyor.`
+      : `${visibleGameCount} ${visibleGameCount === 1 ? "game" : "games"} shown.`;
+  }
+
+  function showGames(platform) {
+    visibleGameCount = 0;
+
+    for (const button of buttons) {
+      button.setAttribute("aria-pressed", String(button.dataset.platform === platform));
+    }
+
+    for (const game of games) {
+      const platforms = game.dataset.platforms.split(" ");
+      game.hidden = platform !== "all" && !platforms.includes(platform);
+      if (!game.hidden) visibleGameCount++;
+    }
+
+    announceGameCount();
+  }
 
   for (const button of buttons) {
-    button.setAttribute("aria-pressed", String(button.dataset.platform === platform));
+    button.addEventListener("click", () => showGames(button.dataset.platform));
   }
 
-  for (const game of games) {
-    const platforms = game.dataset.platforms.split(" ");
-    game.hidden = platform !== "all" && !platforms.includes(platform);
-    if (!game.hidden) visibleGameCount++;
-  }
-
-  announceGameCount();
+  document.querySelector("[data-show-all]").addEventListener("click", () => showGames("all"));
+  filters.hidden = false;
 }
-
-for (const button of buttons) {
-  button.addEventListener("click", () => showGames(button.dataset.platform));
-}
-
-document.querySelector("[data-show-all]").addEventListener("click", () => showGames("all"));
-filters.hidden = false;
 
 for (const placeholder of document.querySelectorAll("[data-social-url]")) {
   const url = placeholder.dataset.socialUrl.trim();
@@ -58,7 +61,7 @@ if (window.location.protocol === "file:") {
 
 const gallery = document.querySelector(".gallery");
 
-if (typeof gallery.showModal === "function") {
+if (typeof gallery?.showModal === "function") {
   const galleryTitle = gallery.querySelector("#gallery-title");
   const pictureFrame = gallery.querySelector(".gallery-image");
   const thumbnails = gallery.querySelector(".gallery-thumbnails");
@@ -97,18 +100,18 @@ if (typeof gallery.showModal === "function") {
     });
   }
 
-  for (const link of document.querySelectorAll(".game-art")) {
+  for (const link of document.querySelectorAll("[data-gallery-image]")) {
     link.addEventListener("click", event => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
 
       event.preventDefault();
-      const card = link.closest(".game-card");
-      screenshots = Array.from(card.querySelector(".store-screens").content.querySelectorAll("img"));
-      galleryTitle.textContent = card.querySelector("h3").textContent;
+      const group = link.closest("[data-gallery-group]");
+      screenshots = Array.from(group.querySelector(".store-screens").content.querySelectorAll("img"));
+      galleryTitle.textContent = group.dataset.galleryTitle;
       thumbnails.replaceChildren(...buildThumbnails());
       activeThumbnail = null;
       gallery.showModal();
-      showScreenshot(0);
+      showScreenshot(Number(link.dataset.galleryImage));
     });
     link.setAttribute("aria-haspopup", "dialog");
   }
@@ -131,4 +134,35 @@ if (typeof gallery.showModal === "function") {
     thumbnails.replaceChildren();
     activeThumbnail = null;
   });
+}
+
+if (
+  "IntersectionObserver" in window &&
+  window.matchMedia("(prefers-reduced-motion: no-preference)").matches
+) {
+  const targets = document.querySelectorAll(
+    ".game-card, .studio-panel, .contact-panel, .detail-features, " +
+    ".detail-steps li, .detail-shot, .detail-related-link"
+  );
+
+  const entranceObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      const panel = entry.target;
+      panel.classList.toggle("awaiting-entrance", !entry.isIntersecting);
+      if (!entry.isIntersecting) continue;
+
+      entranceObserver.unobserve(panel);
+
+      if (!panel.matches(":focus-within")) {
+        panel.classList.add("entering");
+        panel.addEventListener("animationend", () => {
+          panel.classList.remove("entering");
+        }, { once: true });
+      }
+    }
+  }, { rootMargin: "0px 0px 32px 0px" });
+
+  for (const panel of targets) {
+    entranceObserver.observe(panel);
+  }
 }
