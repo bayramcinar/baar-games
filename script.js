@@ -2,14 +2,11 @@ const filters = document.querySelector(".filters");
 const buttons = filters.querySelectorAll("button");
 const games = document.querySelectorAll(".game-card");
 const status = document.querySelector("#filter-status");
-const languageSwitch = document.querySelector(".language-switch");
-const languageButtons = languageSwitch.querySelectorAll("button");
-const languageStorageKey = "baar-games-language";
-let language = "en";
+const isTurkish = document.documentElement.lang === "tr";
 let visibleGameCount = games.length;
 
 function announceGameCount() {
-  status.textContent = language === "tr"
+  status.textContent = isTurkish
     ? `${visibleGameCount} oyun gösteriliyor.`
     : `${visibleGameCount} ${visibleGameCount === 1 ? "game" : "games"} shown.`;
 }
@@ -49,60 +46,15 @@ for (const placeholder of document.querySelectorAll("[data-social-url]")) {
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   const title = placeholder.closest(".game-card").querySelector("h3").textContent;
-  link.setAttribute("aria-label", `${title} on ${platform}`);
-  link.dataset.trAriaLabel = `${platform} | ${title}`;
+  link.setAttribute("aria-label", isTurkish ? `${platform} | ${title}` : `${title} on ${platform}`);
   placeholder.replaceWith(link);
 }
 
-const textTranslations = Array.from(document.querySelectorAll("[data-tr]"), element => ({
-  element,
-  english: element.textContent,
-  turkish: element.dataset.tr,
-}));
-
-const translatedAttributes = ["aria-label", "title", "content"];
-const attributeTranslations = translatedAttributes.flatMap(attribute =>
-  Array.from(document.querySelectorAll(`[data-tr-${attribute}]`), element => ({
-    element,
-    attribute,
-    english: element.getAttribute(attribute),
-    turkish: element.getAttribute(`data-tr-${attribute}`),
-  }))
-);
-
-function setLanguage(nextLanguage) {
-  language = nextLanguage === "tr" ? "tr" : "en";
-  document.documentElement.lang = language;
-
-  for (const { element, english, turkish } of textTranslations) {
-    element.textContent = language === "tr" ? turkish : english;
+if (window.location.protocol === "file:") {
+  for (const link of document.querySelectorAll("[data-file-href]")) {
+    link.href = link.dataset.fileHref;
   }
-  for (const { element, attribute, english, turkish } of attributeTranslations) {
-    element.setAttribute(attribute, language === "tr" ? turkish : english);
-  }
-  for (const button of languageButtons) {
-    button.setAttribute("aria-pressed", String(button.dataset.language === language));
-  }
-  if (status.textContent) announceGameCount();
 }
-
-try {
-  setLanguage(localStorage.getItem(languageStorageKey));
-} catch {
-  setLanguage("en");
-}
-
-for (const button of languageButtons) {
-  button.addEventListener("click", () => {
-    setLanguage(button.dataset.language);
-    try {
-      localStorage.setItem(languageStorageKey, language);
-    } catch {
-      // The selection still applies when browser storage is unavailable.
-    }
-  });
-}
-languageSwitch.hidden = false;
 
 const gallery = document.querySelector(".gallery");
 
@@ -115,16 +67,10 @@ if (typeof gallery.showModal === "function") {
   let activeThumbnail = null;
   let current = 0;
 
-  function screenshotDescription(screenshot) {
-    return language === "tr" ? screenshot.dataset.altTr || screenshot.alt : screenshot.alt;
-  }
-
   function showScreenshot(index) {
     current = (index + screenshots.length) % screenshots.length;
     const screenshot = screenshots[current];
-    const image = screenshot.cloneNode();
-    image.alt = screenshotDescription(screenshot);
-    pictureFrame.replaceChildren(image);
+    pictureFrame.replaceChildren(screenshot.cloneNode());
     position.textContent = `${current + 1} / ${screenshots.length} · ${screenshot.dataset.store}`;
 
     activeThumbnail?.removeAttribute("aria-current");
@@ -139,8 +85,8 @@ if (typeof gallery.showModal === "function") {
       const button = document.createElement("button");
       button.className = "gallery-thumbnail";
       button.type = "button";
-      const label = language === "tr" ? "Ekran görüntüsü" : "Screenshot";
-      button.setAttribute("aria-label", `${label} ${index + 1}: ${screenshotDescription(shot)}, ${shot.dataset.store}`);
+      const label = isTurkish ? "Ekran görüntüsü" : "Screenshot";
+      button.setAttribute("aria-label", `${label} ${index + 1}: ${shot.alt}, ${shot.dataset.store}`);
 
       const preview = shot.cloneNode();
       preview.alt = "";
