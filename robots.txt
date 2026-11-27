@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://baargames.com/sitemap.xml
+Sitemap: https://www.baargames.com/sitemap.xml
